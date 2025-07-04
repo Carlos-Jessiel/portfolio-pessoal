@@ -1,0 +1,181 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f4f6fa;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #007bff;
+    background: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -12px; /* Sobrepor a borda da mensagem */
+}
+
+.menu, #mensagem {
+    max-width: 720px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu h1 {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.2s, background 0.2s;
+    padding: 15px 25px 15px 26px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-right: 1px solid #ddd;
+}
+
+.menu h1:last-child {
+    border-right: none;
+}
+
+.menu h1:hover {
+    color: #fff;
+    background: #007bff;
+}
+
+#mensagem {
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    background: #fff;
+    border: 2px solid #007bff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 64px 24px 32px 24px;
+    min-height: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+}
+
+#mensagem table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#mensagem table tr {
+    border-bottom: 1px solid #007bff;
+}
+
+#mensagem table th {
+    border-bottom: 1px solid #007bff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#mensagem table td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+.sobre-mim-texto-com-foto {
+    position: relative;
+    text-align: justify;
+}
+
+.foto-perfil {
+    float: left; /* Mantém a foto à esquerda */
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 20px 20px 0;
+    border: 4px solid #007bff;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    object-fit: cover;
+    animation: flutuar 3s ease-in-out infinite; /* Animação para a foto flutuar */
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animação para a foto flutuar */
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0px); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Posição final */
+    }   
+}
+
+#mensagem form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#mensagem form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+#mensagem form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.botoes {
+    text-align: center;
+}
+
+.botoes button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Açtera a cor quando o mouse passa sobre o botão */
+.botoes button:hover {
+    background-color: #0056b3;
+}
+
+/* Açtera a cor quando o botão é clicado */
+.botoes button:active {
+    background-color: #004085;
+}
+
+#mensagem-envio {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo-redes-sociais {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.logo-redes-sociais:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
