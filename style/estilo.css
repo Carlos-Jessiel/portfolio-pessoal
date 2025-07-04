@@ -7,6 +7,14 @@ body {
     background: #f4f6fa;
 }
 
+/* ===== LAYOUT PRINCIPAL ===== */
+.menu, #mensagem {
+    max-width: 720px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
 .menu {
     display: flex;
     justify-content: center;
@@ -18,12 +26,6 @@ body {
     position: relative;
     z-index: 2;
     margin-bottom: -12px; /* Sobrepor a borda da mensagem */
-}
-
-.menu, #mensagem {
-    max-width: 720px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .menu h1 {
@@ -46,6 +48,7 @@ body {
     background: #007bff;
 }
 
+/* ===== AREA DE CONTEÚDO - MENSAGEM ===== */
 #mensagem {
     transition: all 0.3s ease;
     font-size: 1.2rem;
@@ -61,6 +64,7 @@ body {
     text-align: justify;
 }
 
+/* ===== TABELAS ===== */
 #mensagem table {
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -83,13 +87,14 @@ body {
     font-size: 1.0rem;
 }
 
+/* ===== SEÇÃO SOBRE MIM ===== */
 .sobre-mim-texto-com-foto {
     position: relative;
     text-align: justify;
 }
 
 .foto-perfil {
-    float: left; /* Mantém a foto à esquerda */
+    float: left; /* Mantém a foto a squerda */
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -106,7 +111,7 @@ body {
     object-fit: cover;
 }
 
-/* Animação para a foto flutuar */
+/* ===== ANIMAÇÕES - FOTO FLUTUANDO ===== */
 @keyframes flutuar {
     0%, 100% {
         transform: translateY(0px); /* Posição inicial */
@@ -116,6 +121,7 @@ body {
     }   
 }
 
+/* ===== FORMULÁRIO DE CONTATO ===== */
 #mensagem form {
     display: flex;
     flex-direction: column;
@@ -129,8 +135,7 @@ body {
 }
 
 #mensagem form input {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #007bff;
@@ -138,6 +143,7 @@ body {
     font-weight: bold;
 }
 
+/* ===== BOTÕES ===== */
 .botoes {
     text-align: center;
 }
@@ -150,9 +156,9 @@ body {
     padding: 10px;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-/* Açtera a cor quando o mouse passa sobre o botão */
 .botoes button:hover {
     background-color: #0056b3;
 }
@@ -162,6 +168,7 @@ body {
     background-color: #004085;
 }
 
+/* ===== MENSAGENS ===== */
 #mensagem-envio {
     color: #007bff;
     font-size: 1.2rem;
@@ -169,13 +176,152 @@ body {
     text-align: center;
 }
 
+/* ===== REDES SOCIAIS ===== */
 .logo-redes-sociais {
     width: 100px;
     height: 100px;
     margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .logo-redes-sociais:hover {
     transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
+}
+
+/* ===== RESPONSIVIDADE ===== 
+
+    Bloco de código para ajustar o layout da página em diferentes tamanhos de tela.
+
+*/
+
+/* Tablets */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        margin-bottom: -8px;
+    }
+    
+    .menu h1 {
+        font-size: 1.3rem;
+        padding: 12px 20px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu h1:last-child {
+        border-bottom: none;
+    }
+    
+    #mensagem {
+        font-size: 1.1rem;
+        padding: 48px 20px 24px 20px;
+    }
+    
+    #mensagem table {
+        font-size: 0.9rem;
+        min-width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+    
+    #mensagem table th,
+    #mensagem table td {
+        font-size: 0.9rem;
+        padding: 8px 4px;
+        white-space: nowrap;
+    }
+    
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+        margin: 0 15px 15px 0;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .menu h1 {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+    
+    #mensagem {
+        font-size: 1rem;
+        padding: 40px 15px 20px 15px;
+    }
+    
+    #mensagem table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    #mensagem table th,
+    #mensagem table td {
+        font-size: 0.8rem;
+        padding: 6px 2px;
+        white-space: nowrap;
+    }
+    
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+        float: none;
+        display: block;
+        margin: 0 auto 15px auto;
+    }
+    
+    .sobre-mim-texto-com-foto {
+        text-align: center;
+    }
+    
+    #mensagem form label,
+    #mensagem form input,
+    .botoes button,
+    #mensagem-envio {
+        font-size: 1rem;
+    }
+    
+    #mensagem form input {
+        padding: 8px;
+    }
+    
+    .botoes button {
+        padding: 8px;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 320px) {
+    .menu h1 {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+    
+    #mensagem {
+        font-size: 0.9rem;
+        padding: 35px 10px 15px 10px;
+    }
+    
+    #mensagem table {
+        font-size: 0.7rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    #mensagem table th,
+    #mensagem table td {
+        font-size: 0.7rem;
+        padding: 4px 1px;
+        white-space: nowrap;
+    }
+    
+    .foto-perfil {
+        width: 80px;
+        height: 80px;
+    }
 }
